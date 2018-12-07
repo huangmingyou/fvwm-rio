@@ -28,11 +28,11 @@ Style *		ClickToFocus, ClickToFocusPassesClick,ResizeHintOverride
 Style *		SmartPlacement
 Style * 	BorderColorset 1
 # 活动窗口颜色
-Style * 	HilightBorderColorset 5
+Style * 	HilightBorderColorset 6
 Style "Fvwm*"		Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip
 Style "Virt*"		BorderWidth 0
-Style "微信网页版"		BorderWidth 0
-Style "xclock"		BorderWidth 0
+#Style "微信网页版"		BorderWidth 0
+#Style "xclock"		BorderWidth 0
 MenuStyle * 	Hilight3DOff, PopupDelayed, PopupDelay 160, SeparatorsLong
 MenuStyle * 	ActiveFore white, HilightBack rgb:44/88/44
 MenuStyle * 	MenuColorset 3
