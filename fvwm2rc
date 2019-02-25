@@ -40,7 +40,7 @@ MenuStyle * 	MenuColorset 3
 DestroyFunc StartFunction
 AddToFunc StartFunction
 #设置壁纸
-+ I Exec exec fvwm-root /home/hmy/.pic/w3.png
++ I Exec exec fvwm-root /home/hmy/.pic/w1.png
 #设置背景
 #+ I Exec exec xsetroot -solid black
 + I Exec exec xset b off
@@ -71,7 +71,7 @@ AddToFunc MoveToCurrentDesk
 DestroyFunc lockx
 AddToFunc lockx
 + I GotoDesk 0 1
-+ I Exec exec  slock
++ I Exec exec  i3lock  -c "000000"
 #################################[ 鼠标键盘 ]##############################################
 Mouse 1 	W	M	Move-or-Raise
 Mouse 3 	R       A       WindowList   NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum 
@@ -81,7 +81,8 @@ Mouse 3 	W	M	Resize-or-Raise
 Key F1		A	A	JumpExec urxvt urxvt
 Key F1		A	4	Exec exec urxvt
 Key F2		A	A	JumpExec *Google* google-chrome
-Key F3          A       A       JumpExec *微信网页版* "google-chrome --app=https://wx.qq.com"
+#Key F3          A       A       JumpExec *微信网页版* "google-chrome --app=https://wx.qq.com"
+#Key F3          A       A       Exec exec /home/hmy/.s1.sh
 #Key F3          A       A       GotoDesk 0 2 0 3
 Key F1		A	M 	JumpExec xterm xterm
 Key F4		A 	M 	Close
@@ -91,7 +92,7 @@ Key F8		A	A	WindowList Function MoveToCurrentDesk NoNormal NoHotkeys NoGeometry 
 Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
 #Key F11		W	A	Iconify
 Key m		W	4	Iconify
-Key F12 	A 	A 	Exec exec slock
+Key F12 	A 	A 	Exec exec i3lock  -c "000000"
 Key t		A	4	Layer 0 8
 Key b		A	4	Layer 0 4
 Key r           A       4       Restart fvwm2
