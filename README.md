@@ -19,7 +19,7 @@ fvwm 模拟 plan9 的 rio 窗口管理器.
 2. 或者 win + w / s / a / d / h / j 
 
 
-#### 打开 fvwm 
+#### 打开 urxvt 
 
 F1
 
