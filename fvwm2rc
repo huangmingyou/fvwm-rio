@@ -23,7 +23,7 @@ Colorset 5 fg black, bg rgb:55/aa/aa, sh rgb:55/aa/aa, hi rgb:55/aa/aa
 Colorset 6 fg black, bg rgb:e4/78/33, sh rgb:e4/78/33, hi rgb:e4/78/33
 ######################################################################
 ######################################################################
-Style *		BorderWidth 0.5, !Handles, !Title, !Icon
+Style *		BorderWidth 0, !Handles, !Title, !Icon
 Style *		ClickToFocus, ClickToFocusPassesClick,ResizeHintOverride
 Style *		SmartPlacement
 Style * 	BorderColorset 1
@@ -71,7 +71,7 @@ AddToFunc MoveToCurrentDesk
 DestroyFunc lockx
 AddToFunc lockx
 + I GotoDesk 0 1
-+ I Exec exec  i3lock  -c "000000"
++ I Exec exec  i3lock   -c "000000"
 #################################[ 鼠标键盘 ]##############################################
 Mouse 1 	W	M	Move-or-Raise
 Mouse 3 	R       A       WindowList   NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum 
@@ -87,12 +87,15 @@ Key F2		A	A	JumpExec *Google* google-chrome
 Key F1		A	M 	JumpExec xterm xterm
 Key F4		A 	M 	Close
 #Key F6 		A 	A 	GotoDesk -1 0 3
-Key F7 		A 	A 	GotoDesk 1 0 3
+#Key F7 		A 	A 	GotoDesk 1 0 3
 Key F8		A	A	WindowList Function MoveToCurrentDesk NoNormal NoHotkeys NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum
 Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
 #Key F11		W	A	Iconify
 Key m		W	4	Iconify
-Key F12 	A 	A 	Exec exec i3lock  -c "000000"
+Key F12 	A 	A 	Exec exec i3lock   -c "000000"
+Key F7 	    A 	A 	Exec exec /usr/local/bin/s1
+#cat /usr/local/bin/s1
+#sleep 0.2 ; scrot -s /tmp/1.png
 Key t		A	4	Layer 0 8
 Key b		A	4	Layer 0 4
 Key r           A       4       Restart fvwm2
