@@ -120,6 +120,7 @@ Key Down	A 	4 	Move w w+5p
 #Key 4	A 	4 	GotoDesk 0 3 0 3
 Key Left	A 	4 	GotoDesk -1 0 3
 Key Right	A 	4 	GotoDesk 1 0 3
+# win+alt+left, 把窗口移动到上一个桌面
 Key Left	W 	4M 	MoveToDesk -1 0 3
 Key Right	W 	4M 	MoveToDesk 1 0 3
 Key Return 	A 	M 	Maximize
