@@ -28,7 +28,7 @@ Style *		ClickToFocus, ClickToFocusPassesClick,ResizeHintOverride
 Style *		SmartPlacement
 Style * 	BorderColorset 1
 # 活动窗口颜色
-Style * 	HilightBorderColorset 6
+Style * 	HilightBorderColorset 5
 Style "Fvwm*"		Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip
 Style "Virt*"		BorderWidth 0
 #Style "微信网页版"		BorderWidth 0
@@ -73,8 +73,10 @@ AddToFunc lockx
 + I GotoDesk 0 1
 + I Exec exec  i3lock   -c "000000"
 #################################[ 鼠标键盘 ]##############################################
+#移动
 Mouse 1 	W	M	Move-or-Raise
 Mouse 3 	R       A       WindowList   NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum 
+# 修改窗口大小
 Mouse 3 	W	M	Resize-or-Raise
 
 
@@ -91,6 +93,7 @@ Key F4		A 	M 	Close
 Key F8		A	A	WindowList Function MoveToCurrentDesk NoNormal NoHotkeys NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum
 Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
 #Key F11		W	A	Iconify
+# 图标化窗口
 Key m		W	4	Iconify
 Key F12 	A 	A 	Exec exec i3lock   -c "000000"
 Key F7 	    A 	A 	Exec exec /usr/local/bin/s1
@@ -130,6 +133,14 @@ Key 6           A       4       Exec exec xclip ~hmy/short/t6
 Key 7           A       4       Exec exec xclip ~hmy/short/t7
 Key 8           A       4       Exec exec xclip ~hmy/short/t8
 Key 9           A       4       Exec exec xclip ~hmy/short/t9
+
+#### 临时对窗口标记, 类似红警对单位编号，方便后续选择
+
+#ctrl + alt + 数字0 / 7 / 8 / 9
+
+#### 选中临时编号的窗口
+
+#win + 数字 0 / 7 / 8 / 9
 
 Key 0 		WI 	MC 	Key 0 A 4 WindowId $[w.id] WindowListFunc
 Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
