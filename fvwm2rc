@@ -83,7 +83,7 @@ Mouse 3 	W	M	Resize-or-Raise
 Key F1		A	A	JumpExec urxvt urxvt
 Key F1		A	4	Exec exec urxvt
 Key F2		A	A	JumpExec *Google* google-chrome
-#Key F3          A       A       JumpExec *微信网页版* "google-chrome --app=https://wx.qq.com"
+Key F3          A       A       JumpTo *Visual* 
 #Key F3          A       A       Exec exec /home/hmy/.s1.sh
 #Key F3          A       A       GotoDesk 0 2 0 3
 Key F1		A	M 	JumpExec xterm xterm
@@ -92,10 +92,12 @@ Key F4		A 	M 	Close
 #Key F7 		A 	A 	GotoDesk 1 0 3
 Key F8		A	A	WindowList Function MoveToCurrentDesk NoNormal NoHotkeys NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum
 Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
+#Key 4		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
 #Key F11		W	A	Iconify
 # 图标化窗口
 Key m		W	4	Iconify
-Key F12 	A 	A 	Exec exec i3lock   -c "000000"
+Key F11 	A 	A 	Exec exec i3lock   -c "000000"
+#Key F12 	A 	A 	Exec exec i3lock   -c "000000"
 Key F7 	    A 	A 	Exec exec /usr/local/bin/s1
 #cat /usr/local/bin/s1
 #sleep 0.2 ; scrot -s /tmp/1.png
@@ -105,7 +107,7 @@ Key r           A       4       Restart fvwm2
 Key h 		A 	4       ResizeMove w+3 w w-3 w
 Key j 		A 	4       ResizeMove w w-3 w w+3
 Key k 		A 	4       ResizeMove w w+3 w w-3
-Key l 		A 	4       Exec exec slock
+Key l 		A 	4       Exec exec i3lock   -c "000000"
 Key d 		A 	4       ResizeMove w+3 w w  w
 Key a 		A 	4       ResizeMove w-3 w w  w
 Key s 		A 	4       ResizeMove w w+3 w w
@@ -147,3 +149,7 @@ Key 0 		WI 	MC 	Key 0 A 4 WindowId $[w.id] WindowListFunc
 Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
 Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
 Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
+
+
+# stroke
+
