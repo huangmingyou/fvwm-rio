@@ -35,7 +35,7 @@ URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
 
 Rxvt.saveLines:10000
-Rxvt.geometry: 199x70+275-60
+Rxvt.geometry: 213x59+0+0
 !
 !
 Rxvt.preeditType: Root
@@ -44,19 +44,21 @@ Rxvt.preeditType: Root
 !URxvt.externalBorder: 0
 URxvt.scrollBar: false
 
+URxvt.perl-ext-common:-confirm-paste
 
 
 
-URxvt.font:xft:Terminus-13:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
-URxvt.boldFont:xft:Terminus-13:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
+
+URxvt.font:xft:Terminus-18:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
+URxvt.boldFont:xft:Terminus-18:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
 
 
 URxvt.perl-ext:           default,matcher
 URxvt.urlLauncher:        google-chrome
 URxvt.keysym.C-Delete:    perl:matcher
 URxvt.matcher.button:     2
-URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
-URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+!URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+!URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
 URxvt.matcher.launcher.2: vim +$2 $1
 
 
