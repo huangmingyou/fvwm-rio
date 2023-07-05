@@ -4,7 +4,12 @@ URxvt.foreground: gray
 URxvt.background: black
 Rxvt.colorBD:yellow
 Rxvt.colorUL:green
-URxvt.cursorColor: red3
+URxvt.cursorColor: #009900
+URxvt.cursorShape: ibeam
+*.cursorColor: #afbfbf
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+
 
 ! 黑色
 URxvt.color0: black
@@ -35,7 +40,10 @@ URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
 
 Rxvt.saveLines:10000
-Rxvt.geometry: 213x59+0+0
+!Rxvt.geometry: 213x59+0+0
+!Rxvt.geometry: 127x37-0+0
+Rxvt.geometry: 127x37-0+0
+
 !
 !
 Rxvt.preeditType: Root
@@ -49,9 +57,14 @@ URxvt.perl-ext-common:-confirm-paste
 
 
 
-URxvt.font:xft:Terminus-18:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
-URxvt.boldFont:xft:Terminus-18:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
+!URxvt.font:xft:Terminus-15:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
+!URxvt.boldFont:xft:Terminus-15:style=Regular,xft:WenQuanYi Bitmap Song:style=Regular
 
+
+URxvt.font:xft:Hack-18:style=Regular,xft:AR PL KaitiM GB:style=Regular
+URxvt.boldFont:xft:Hack-18:style=Regular,xft:AR PL KaitiM GB:style=Regular
+!URxvt.font:xft:Hack-18:style=Regular,xft:微软雅黑
+!URxvt.boldFont:xft:Hack-18:style=Regular,xft:微软雅黑
 
 URxvt.perl-ext:           default,matcher
 URxvt.urlLauncher:        google-chrome
@@ -73,3 +86,4 @@ URxvt.matcher.launcher.2: vim +$2 $1
 
 Clock.hourColor: red
 Clock.foreground: red
+
