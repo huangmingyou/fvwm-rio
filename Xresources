@@ -42,7 +42,8 @@ URxvt.preeditType: OverTheSpot
 Rxvt.saveLines:10000
 !Rxvt.geometry: 213x59+0+0
 !Rxvt.geometry: 127x37-0+0
-Rxvt.geometry: 127x37-0+0
+!Rxvt.geometry: 127x37-0+0
+Rxvt.geometry: 127x37+2751-68
 
 !
 !
@@ -52,7 +53,7 @@ Rxvt.preeditType: Root
 !URxvt.externalBorder: 0
 URxvt.scrollBar: false
 
-URxvt.perl-ext-common:-confirm-paste
+!URxvt.perl-ext-common:-confirm-paste
 
 
 
@@ -63,8 +64,16 @@ URxvt.perl-ext-common:-confirm-paste
 
 URxvt.font:xft:Hack-18:style=Regular,xft:AR PL KaitiM GB:style=Regular
 URxvt.boldFont:xft:Hack-18:style=Regular,xft:AR PL KaitiM GB:style=Regular
+
 !URxvt.font:xft:Hack-18:style=Regular,xft:微软雅黑
 !URxvt.boldFont:xft:Hack-18:style=Regular,xft:微软雅黑
+!URxvt.font:xft:Hack-18:style=Regular,xft:华文仿宋
+!URxvt.boldFont:xft:Hack-18:style=Regular,xft:华文仿宋
+!URxvt.font:xft:Fira Code-18,xft:AR PL KaitiM GB:style=Regular
+!URxvt.boldFont:xft:Fira Code-18,xft:AR PL KaitiM GB:style=Regular
+
+!URxvt.font:xft:Hack-18:style=Regular,xft:华文仿宋-18
+!URxvt.boldFont:xft:Hack-18:style=Regular,xft:华文仿宋-18
 
 URxvt.perl-ext:           default,matcher
 URxvt.urlLauncher:        google-chrome

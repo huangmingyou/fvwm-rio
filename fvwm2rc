@@ -3,6 +3,12 @@
 # 根据 difancn@gmail.com 发布在https://code.google.com/p/fvwm-rio/ 的代码修改
 # author: hmy[huangmingyou@gmail.com]
 #################################[ 样式定义 ]##############################################
+
+
+
+
+
+
 EdgeScroll 0 0 
 SetEnv minDesk 0
 SetEnv maxDesk 3
@@ -30,7 +36,8 @@ Style * 	BorderColorset 1
 # 活动窗口颜色
 Style * 	HilightBorderColorset 5
 Style "Fvwm*"		Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip
-Style "Virt*"		BorderWidth 0
+Style "钉钉"		BorderWidth 0
+Style "urxvt"		BorderWidth 0
 #Style "微信网页版"		BorderWidth 0
 #Style "xclock"		BorderWidth 0
 MenuStyle * 	Hilight3DOff, PopupDelayed, PopupDelay 160, SeparatorsLong
@@ -40,7 +47,7 @@ MenuStyle * 	MenuColorset 3
 DestroyFunc StartFunction
 AddToFunc StartFunction
 #设置壁纸
-+ I Exec exec fvwm-root /home/hmy/.pic/w1.png
++ I Exec exec fvwm-root /home/hmy/.pic/2.png
 #设置背景
 #+ I Exec exec xsetroot -solid black
 + I Exec exec xset b off
@@ -72,6 +79,8 @@ DestroyFunc lockx
 AddToFunc lockx
 + I GotoDesk 0 1
 + I Exec exec  i3lock   -c "000000"
+
+
 #################################[ 鼠标键盘 ]##############################################
 #移动
 Mouse 1 	W	M	Move-or-Raise
@@ -81,40 +90,44 @@ Mouse 3 	W	M	Resize-or-Raise
 
 
 Key F1		A	A	JumpExec urxvt urxvt
-Key F1		A	4	Exec exec urxvt
-Key F2		A	A	JumpExec *Chrome* google-chrome
-Key F3		A	A	JumpExec *VirtualBox echo 
+Key F1		A	4	Exec exec konsole
+Key F2		A	A	JumpExec *chrome* google-chrome
+#Key F2		A	A	JumpExec *Firefox* firefox
+Key F3		A	A	JumpExec 钉钉 echo 
+#Key F4		A	A	Exec exec xdotool click 2
+Key F4		A	A	Exec exec /home/hmy/work/bin/xcb
 #Key F3          A       A       JumpTo *Visual* 
 #Key F3          A       A       Exec exec /home/hmy/.s1.sh
 #Key F3          A       A       GotoDesk 0 2 0 3
-Key F1		A	M 	JumpExec xterm xterm
+Key F1		A	M 	JumpExec konsole konsole
 Key F4		A 	M 	Close
 #Key F6 		A 	A 	GotoDesk -1 0 3
 #Key F7 		A 	A 	GotoDesk 1 0 3
 #Key F8		A	A	WindowList Function MoveToCurrentDesk NoNormal NoHotkeys NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum
-Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
+#Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
 #Key 4		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
-#Key F11		W	A	Iconify
+#Key F12		W	A	Iconify
+Key F7		A	A	Exec exec /home/hmy/bin/xcb
 # 图标化窗口
-Key m		W	4	Iconify
+#Key m		W	4	Iconify
 Key F11 	A 	A 	Exec exec i3lock   -c "000000"
 #Key F12 	A 	A 	Exec exec i3lock   -c "000000"
-Key F8 	    A 	A 	Exec exec /home/hmy/bin/s1
+Key F8 	    A 	A 	Exec exec /home/hmy/work/bin/s1
 #cat /usr/local/bin/s1
 #sleep 0.2 ; scrot -s /tmp/1.png
-Key t		A	4	Layer 0 8
-Key b		A	4	Layer 0 4
-Key r           A       4       Restart fvwm2
-Key h 		A 	4       ResizeMove w+3 w w-3 w
-Key j 		A 	4       ResizeMove w w-3 w w+3
-Key k 		A 	4       ResizeMove w w+3 w w-3
-Key l 		A 	4       Exec exec i3lock   -c "000000"
-Key d 		A 	4       ResizeMove w+3 w w  w
-Key a 		A 	4       ResizeMove w-3 w w  w
-Key s 		A 	4       ResizeMove w w+3 w w
-Key w 		A 	4       ResizeMove w w-3 w w
-Key Up		A 	4 	Move w w-5p
-Key Down	A 	4 	Move w w+5p
+#Key t		A	4	Layer 0 8
+#Key b		A	4	Layer 0 4
+#Key r           A       4       Restart fvwm2
+#Key h 		A 	4       ResizeMove w+3 w w-3 w
+#Key j 		A 	4       ResizeMove w w-3 w w+3
+#Key k 		A 	4       ResizeMove w w+3 w w-3
+#Key l 		A 	4       Exec exec i3lock   -c "000000"
+#Key d 		A 	4       ResizeMove w+3 w w  w
+#Key a 		A 	4       ResizeMove w-3 w w  w
+#Key s 		A 	4       ResizeMove w w+3 w w
+#Key w 		A 	4       ResizeMove w w-3 w w
+#Key Up		A 	4 	Move w w-5p
+#Key Down	A 	4 	Move w w+5p
 #Key Left	A 	4 	Move w-5p w
 #Key Right	A 	4 	Move w+5p w
 #Key 1	A 	4 	GotoDesk 0 0 0 3
@@ -124,19 +137,10 @@ Key Down	A 	4 	Move w w+5p
 Key Left	A 	4 	GotoDesk -1 0 3
 Key Right	A 	4 	GotoDesk 1 0 3
 # win+alt+left, 把窗口移动到上一个桌面
-Key Left	W 	4M 	MoveToDesk -1 0 3
-Key Right	W 	4M 	MoveToDesk 1 0 3
+#Key Left	W 	4M 	MoveToDesk -1 0 3
+#Key Right	W 	4M 	MoveToDesk 1 0 3
 Key Return 	A 	M 	Maximize
 Key Tab		A	M	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons	NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L Layer 4
-Key 1           A       4       Exec exec xclip ~hmy/short/t1
-Key 2           A       4       Exec exec xclip ~hmy/short/t2
-Key 3           A       4       Exec exec xclip ~hmy/short/t3
-Key 4           A       4       Exec exec xclip ~hmy/short/t4
-Key 5           A       4       Exec exec xclip ~hmy/short/t5
-Key 6           A       4       Exec exec xclip ~hmy/short/t6
-Key 7           A       4       Exec exec xclip ~hmy/short/t7
-Key 8           A       4       Exec exec xclip ~hmy/short/t8
-Key 9           A       4       Exec exec xclip ~hmy/short/t9
 
 #### 临时对窗口标记, 类似红警对单位编号，方便后续选择
 
@@ -151,6 +155,4 @@ Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
 Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
 Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
 
-
 # stroke
-
