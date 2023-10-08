@@ -1,0 +1,2 @@
+ubuntu 22.04 环境下 ssh 配置两部认证的配置文件.
+安装 libpam-google-authenticator
