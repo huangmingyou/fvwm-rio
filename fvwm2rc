@@ -3,12 +3,6 @@
 # 根据 difancn@gmail.com 发布在https://code.google.com/p/fvwm-rio/ 的代码修改
 # author: hmy[huangmingyou@gmail.com]
 #################################[ 样式定义 ]##############################################
-
-
-
-
-
-
 EdgeScroll 0 0 
 SetEnv minDesk 0
 SetEnv maxDesk 3
@@ -49,12 +43,9 @@ AddToFunc StartFunction
 #设置壁纸
 + I Exec exec fvwm-root /home/hmy/.pic/2.png
 #设置背景
-#+ I Exec exec xsetroot -solid black
 + I Exec exec xset b off
 + I Exec exec xset s off
 + I Exec exec xset -dpms
-#+ I JumpExec urxvt urxvt
-#+ I JumpExec *Google* google-chrome
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Raise
@@ -88,71 +79,29 @@ Mouse 3 	R       A       WindowList   NoIcons  NoGeometry NoCurrentDeskTitle NoN
 # 修改窗口大小
 Mouse 3 	W	M	Resize-or-Raise
 
-
 Key F1		A	A	JumpExec urxvt urxvt
 Key F1		A	4	Exec exec konsole
 Key F2		A	A	JumpExec *chrome* google-chrome
-#Key F2		A	A	JumpExec *Firefox* firefox
 Key F3		A	A	JumpExec 钉钉 echo 
-#Key F4		A	A	Exec exec xdotool click 2
 Key F4		A	A	Exec exec /home/hmy/work/bin/xcb
-#Key F3          A       A       JumpTo *Visual* 
-#Key F3          A       A       Exec exec /home/hmy/.s1.sh
-#Key F3          A       A       GotoDesk 0 2 0 3
 Key F1		A	M 	JumpExec konsole konsole
 Key F4		A 	M 	Close
-#Key F6 		A 	A 	GotoDesk -1 0 3
-#Key F7 		A 	A 	GotoDesk 1 0 3
-#Key F8		A	A	WindowList Function MoveToCurrentDesk NoNormal NoHotkeys NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum
-#Key F9		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
-#Key 4		W 	A 	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L 
-#Key F12		W	A	Iconify
 Key F7		A	A	Exec exec /home/hmy/bin/xcb
 # 图标化窗口
 #Key m		W	4	Iconify
 Key F11 	A 	A 	Exec exec i3lock   -c "000000"
 #Key F12 	A 	A 	Exec exec i3lock   -c "000000"
 Key F8 	    A 	A 	Exec exec /home/hmy/work/bin/s1
-#cat /usr/local/bin/s1
-#sleep 0.2 ; scrot -s /tmp/1.png
-#Key t		A	4	Layer 0 8
-#Key b		A	4	Layer 0 4
-#Key r           A       4       Restart fvwm2
-#Key h 		A 	4       ResizeMove w+3 w w-3 w
-#Key j 		A 	4       ResizeMove w w-3 w w+3
-#Key k 		A 	4       ResizeMove w w+3 w w-3
-#Key l 		A 	4       Exec exec i3lock   -c "000000"
-#Key d 		A 	4       ResizeMove w+3 w w  w
-#Key a 		A 	4       ResizeMove w-3 w w  w
-#Key s 		A 	4       ResizeMove w w+3 w w
-#Key w 		A 	4       ResizeMove w w-3 w w
-#Key Up		A 	4 	Move w w-5p
-#Key Down	A 	4 	Move w w+5p
-#Key Left	A 	4 	Move w-5p w
-#Key Right	A 	4 	Move w+5p w
-#Key 1	A 	4 	GotoDesk 0 0 0 3
-#Key 2	A 	4 	GotoDesk 0 1 0 3
-#Key 3	A 	4 	GotoDesk 0 2 0 3
-#Key 4	A 	4 	GotoDesk 0 3 0 3
 Key Left	A 	4 	GotoDesk -1 0 3
 Key Right	A 	4 	GotoDesk 1 0 3
 # win+alt+left, 把窗口移动到上一个桌面
-#Key Left	W 	4M 	MoveToDesk -1 0 3
-#Key Right	W 	4M 	MoveToDesk 1 0 3
 Key Return 	A 	M 	Maximize
 Key Tab		A	M	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons	NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L Layer 4
-
 #### 临时对窗口标记, 类似红警对单位编号，方便后续选择
-
 #ctrl + alt + 数字0 / 7 / 8 / 9
-
 #### 选中临时编号的窗口
-
 #win + 数字 0 / 7 / 8 / 9
-
 Key 0 		WI 	MC 	Key 0 A 4 WindowId $[w.id] WindowListFunc
 Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
 Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
 Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
-
-# stroke
