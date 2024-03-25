@@ -1,8 +1,3 @@
-###########################################################################################
-# fvwm2 仿 plan9 rio 
-# 根据 difancn@gmail.com 发布在https://code.google.com/p/fvwm-rio/ 的代码修改
-# author: hmy[huangmingyou@gmail.com]
-#################################[ 样式定义 ]##############################################
 EdgeScroll 0 0 
 SetEnv minDesk 0
 SetEnv maxDesk 3
@@ -10,49 +5,26 @@ DeskTopSize 1x1
 DefaultFont "StringEncoding=utf8:xft:Microsoft YaHei:size=10:encoding=iso10646-1"
 HideGeometryWindow
 ColormapFocus FollowsMouse
-#Colorset 1 fg black, bg rgb:9e/e/ee, sh rgb:9e/ee/ee, hi rgb:9e/ee/ee
-################################[ 颜色 ]#############################
-Colorset 1 fg black, bg rgb:66/66/66, sh rgb:6f/66/66, hi rgb:66/66/66
-Colorset 2 fg black, bg rgb:ff/24/00, sh rgb:ff/24/00, hi rgb:ff/24/00
 Colorset 3 fg black, bg rgb:e9/ff/e9, sh rgb:88/cc/88, hi rgb:88/cc/88
-# 桔红
-Colorset 4 fg black, bg rgb:ff/24/00, sh rgb:ff/24/00, hi rgb:ff/24/00
-# 深绿
-Colorset 5 fg black, bg rgb:55/aa/aa, sh rgb:55/aa/aa, hi rgb:55/aa/aa
-# 桔黄
-Colorset 6 fg black, bg rgb:e4/78/33, sh rgb:e4/78/33, hi rgb:e4/78/33
-######################################################################
-######################################################################
 Style *		BorderWidth 0, !Handles, !Title, !Icon
 Style *		ClickToFocus, ClickToFocusPassesClick,ResizeHintOverride
 Style *		SmartPlacement
-Style * 	BorderColorset 1
-# 活动窗口颜色
-Style * 	HilightBorderColorset 5
-Style "Fvwm*"		Sticky, WindowListSkip, CirculateSkipIcon, CirculateSkip
-Style "钉钉"		BorderWidth 0
-Style "urxvt"		BorderWidth 0
-#Style "微信网页版"		BorderWidth 0
-#Style "xclock"		BorderWidth 0
 MenuStyle * 	Hilight3DOff, PopupDelayed, PopupDelay 160, SeparatorsLong
 MenuStyle * 	ActiveFore white, HilightBack rgb:44/88/44
 MenuStyle * 	MenuColorset 3
-#################################[ 函数定义 ]##############################################
+
 DestroyFunc StartFunction
 AddToFunc StartFunction
-#设置壁纸
 + I Exec exec fvwm-root /home/hmy/.pic/2.png
-#设置背景
++ I Exec exec keynav
 + I Exec exec xset b off
 + I Exec exec xset s off
 + I Exec exec xset -dpms
++ I Module FvwmCommandS
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Raise
 + I FlipFocus
-DestroyFunc JumpTo
-AddToFunc JumpTo
-+ I All ($0) WindowListFunc
 DestroyFunc JumpExec
 AddToFunc JumpExec
 + I All ($0) WindowListFunc
@@ -61,40 +33,24 @@ DestroyFunc Move-or-Raise
 AddToFunc Move-or-Raise		M Move
 DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise	M Resize
-DestroyFunc MoveToCurrentDesk
-AddToFunc MoveToCurrentDesk
-+ I Iconify off
-+ I MoveToDesk 0 $[desk.n]
-
-DestroyFunc lockx
-AddToFunc lockx
-+ I GotoDesk 0 1
-+ I Exec exec  i3lock   -c "000000"
 
 
-#################################[ 鼠标键盘 ]##############################################
-#移动
 Mouse 1 	W	M	Move-or-Raise
 Mouse 3 	R       A       WindowList   NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum 
-# 修改窗口大小
 Mouse 3 	W	M	Resize-or-Raise
-
+#Key F1		A	A	JumpExec *Konsole konsole
 Key F1		A	A	JumpExec urxvt urxvt
-Key F1		A	4	Exec exec konsole
-Key F2		A	A	JumpExec *chrome* google-chrome
-Key F3		A	A	JumpExec 钉钉 echo 
-Key F4		A	A	Exec exec /home/hmy/work/bin/xcb
-Key F1		A	M 	JumpExec konsole konsole
+Key F1		A	M	Exec exec /home/hmy/work/bin/altf1
+Key F2		A	A	JumpExec *chrome* /home/hmy/work/bin/run-google
+Key F2		A	M	Exec exec /home/hmy/work/bin/altf2
+Key F3		A	A	JumpExec 钉钉 echo
+Key F3		A	M	Exec exec /home/hmy/work/bin/altf3
+Key F4		A	A	Exec exec /home/hmy/work/bin/xp2cs
 Key F4		A 	M 	Close
-Key F7		A	A	Exec exec /home/hmy/bin/xcb
-# 图标化窗口
-#Key m		W	4	Iconify
+Key F8 	    	A 	A 	Exec exec /home/hmy/work/bin/s1
 Key F11 	A 	A 	Exec exec i3lock   -c "000000"
-#Key F12 	A 	A 	Exec exec i3lock   -c "000000"
-Key F8 	    A 	A 	Exec exec /home/hmy/work/bin/s1
 Key Left	A 	4 	GotoDesk -1 0 3
 Key Right	A 	4 	GotoDesk 1 0 3
-# win+alt+left, 把窗口移动到上一个桌面
 Key Return 	A 	M 	Maximize
 Key Tab		A	M	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons	NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L Layer 4
 #### 临时对窗口标记, 类似红警对单位编号，方便后续选择
@@ -102,6 +58,11 @@ Key Tab		A	M	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons	NoGeometry NoC
 #### 选中临时编号的窗口
 #win + 数字 0 / 7 / 8 / 9
 Key 0 		WI 	MC 	Key 0 A 4 WindowId $[w.id] WindowListFunc
-Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
 Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
 Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
+Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
+
+Key l 		A 	4       ResizeMove w-9 w w+9 w
+Key h       A   4       ResizeMove w+9 w w-9 w
+Key j 		A 	4       ResizeMove w w-9 w w+9
+Key k       A   4       ResizeMove w w+9 w w-9
