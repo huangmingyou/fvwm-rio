@@ -15,12 +15,12 @@ MenuStyle * 	MenuColorset 3
 
 DestroyFunc StartFunction
 AddToFunc StartFunction
-+ I Exec exec fvwm-root /home/hmy/.pic/2.png
++ I Exec exec fvwm-root /home/hmy/.pic/3.png
 + I Exec exec keynav
 + I Exec exec xset b off
 + I Exec exec xset s off
 + I Exec exec xset -dpms
-+ I Module FvwmCommandS
++ I Exec exec vboxmanage startvm "windows10"
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Raise
@@ -34,35 +34,28 @@ AddToFunc Move-or-Raise		M Move
 DestroyFunc Resize-or-Raise
 AddToFunc Resize-or-Raise	M Resize
 
-
 Mouse 1 	W	M	Move-or-Raise
 Mouse 3 	R       A       WindowList   NoIcons  NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum 
 Mouse 3 	W	M	Resize-or-Raise
-#Key F1		A	A	JumpExec *Konsole konsole
-Key F1		A	A	JumpExec urxvt urxvt
-Key F1		A	M	Exec exec /home/hmy/work/bin/altf1
+Key F1		A	A	JumpExec Alacritty alacritty 
 Key F2		A	A	JumpExec *chrome* /home/hmy/work/bin/run-google
-Key F2		A	M	Exec exec /home/hmy/work/bin/altf2
-Key F3		A	A	JumpExec 钉钉 echo
-Key F3		A	M	Exec exec /home/hmy/work/bin/altf3
+Key F3		A	A	Exec exec /home/hmy/work/bin/dingding-window.sh
 Key F4		A	A	Exec exec /home/hmy/work/bin/xp2cs
 Key F4		A 	M 	Close
+Key F6 	    	A 	A 	Exec exec mocp -G
+Key F7 	    	A 	A 	Exec exec mocp -f
 Key F8 	    	A 	A 	Exec exec /home/hmy/work/bin/s1
 Key F11 	A 	A 	Exec exec i3lock   -c "000000"
 Key Left	A 	4 	GotoDesk -1 0 3
 Key Right	A 	4 	GotoDesk 1 0 3
 Key Return 	A 	M 	Maximize
 Key Tab		A	M	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons	NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L Layer 4
+
+
 #### 临时对窗口标记, 类似红警对单位编号，方便后续选择
-#ctrl + alt + 数字0 / 7 / 8 / 9
 #### 选中临时编号的窗口
 #win + 数字 0 / 7 / 8 / 9
-Key 0 		WI 	MC 	Key 0 A 4 WindowId $[w.id] WindowListFunc
-Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
-Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
-Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
-
-Key l 		A 	4       ResizeMove w-9 w w+9 w
-Key h       A   4       ResizeMove w+9 w w-9 w
-Key j 		A 	4       ResizeMove w w-9 w w+9
-Key k       A   4       ResizeMove w w+9 w w-9
+ Key 0 		WI 	MC 	Key 0 A 4 WindowId $[w.id] WindowListFunc
+ Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
+ Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
+ Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
