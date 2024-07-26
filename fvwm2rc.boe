@@ -3,20 +3,15 @@ EdgeScroll 0 0
 SetEnv minDesk 0
 SetEnv maxDesk 3
 DeskTopSize 1x1
-DefaultFont "StringEncoding=utf8:xft:Microsoft YaHei:size=10:encoding=iso10646-1"
 HideGeometryWindow
 ColormapFocus FollowsMouse
 Colorset 3 fg black, bg rgb:e9/ff/e9, sh rgb:88/cc/88, hi rgb:88/cc/88
 Style *         BorderWidth 0, !Handles, !Title, !Icon
 Style *         ClickToFocus, ClickToFocusPassesClick,ResizeHintOverride
 Style *         SmartPlacement
-MenuStyle *     Hilight3DOff, PopupDelayed, PopupDelay 160, SeparatorsLong
-MenuStyle *     ActiveFore white, HilightBack rgb:44/88/44
-MenuStyle *     MenuColorset 3
 
 DestroyFunc StartFunction
 AddToFunc StartFunction
-+ I Exec exec fvwm-root /home/hmy/.pic/1.png
 + I Exec exec /home/hmy/feh-srv.sh
 + I Exec exec xset b off
 + I Exec exec xset s off
