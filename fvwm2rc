@@ -13,6 +13,8 @@ MenuStyle * 	Hilight3DOff, PopupDelayed, PopupDelay 160, SeparatorsLong
 MenuStyle * 	ActiveFore white, HilightBack rgb:44/88/44
 MenuStyle * 	MenuColorset 3
 
+
+
 DestroyFunc StartFunction
 AddToFunc StartFunction
 + I Exec exec fvwm-root /home/hmy/.pic/3.png
@@ -40,21 +42,16 @@ Mouse 3 	W	M	Resize-or-Raise
 Key F1		A	A	JumpExec Alacritty alacritty 
 Key F2		A	A	JumpExec *chrome* /home/hmy/work/bin/run-google
 Key F3		A	A	Exec exec /home/hmy/work/bin/dingding-window.sh
-Key F4		A	A	Exec exec mocp -f
 Key F4		A 	M 	Close
 Key F6 	    	A 	A 	Exec exec mocp -G
-Key F7 	    	A 	A 	Exec exec xdotool mousemove 3000 480
 Key F8 	    	A 	A 	Exec exec /home/hmy/work/bin/s1
 Key F11 	A 	A 	Exec exec i3lock   -c "000000"
 Key Left	A 	4 	GotoDesk -1 0 3
 Key Right	A 	4 	GotoDesk 1 0 3
 Key Return 	A 	M 	Maximize
 Key Tab		A	M	WindowList Root c c CurrentAtEnd CurrentDesk NoIcons	NoGeometry NoCurrentDeskTitle NoNumInDeskTitle NoDeskNum SelectOnRelease Meta_L Layer 4
-
-
 # ctrl+alt+数字 标记窗口
 # win+数字      选中窗口
-
 Key 7 		WI 	MC 	Key 7 A 4 WindowId $[w.id] WindowListFunc
 Key 8 		WI 	MC 	Key 8 A 4 WindowId $[w.id] WindowListFunc
 Key 9 		WI 	MC 	Key 9 A 4 WindowId $[w.id] WindowListFunc
