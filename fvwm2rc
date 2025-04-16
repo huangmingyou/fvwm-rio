@@ -22,7 +22,8 @@ AddToFunc StartFunction
 + I Exec exec xset b off
 + I Exec exec xset s off
 + I Exec exec xset -dpms
-+ I Exec exec vboxmanage startvm "windows10"
++ I Exec exec xss-lock -- i3lock
+#+ I Exec exec xscreensaver --no-splash
 DestroyFunc WindowListFunc
 AddToFunc WindowListFunc
 + I Raise
