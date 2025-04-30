@@ -1,4 +1,5 @@
 # boe 相册
+# linux 开机后直接进入fvwm, 启动相册展示脚本
 EdgeScroll 0 0
 SetEnv minDesk 0
 SetEnv maxDesk 3
