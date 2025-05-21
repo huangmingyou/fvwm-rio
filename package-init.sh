@@ -1,2 +1,2 @@
-apt install pssh flameshot vim gitk git apparix psmisc dc texlive-lang-chinese texlive-latex-recommended  texlive-latex-extra texlive-xetex  ranger htop curl libpam-google-authenticator  i3lock fvwm wireguard alacritty rsync fonts-hack tmux build-essential linux-headers-`uname -r` screen  bash-completion xdotool lua-md5 tshark wireshark vim-gtk3
+apt install pssh flameshot vim gitk git apparix psmisc dc texlive-lang-chinese texlive-latex-recommended  texlive-latex-extra texlive-xetex  ranger htop curl libpam-google-authenticator  i3lock fvwm wireguard alacritty rsync fonts-hack tmux build-essential linux-headers-`uname -r` screen  bash-completion xdotool lua-md5 tshark wireshark vim-gtk3 xsel
 apt autoremove avahi-daemon  cups network-manager 
