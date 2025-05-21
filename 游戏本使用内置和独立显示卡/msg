@@ -1,0 +1,34 @@
+https://wiki.archlinux.org/title/NVIDIA_Optimus
+
+
+/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf
+
+Section "OutputClass"
+    Identifier "intel"
+    MatchDriver "i915"
+    Driver "modesetting"
+EndSection
+
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+    Option "PrimaryGPU" "yes"
+    ModulePath "/usr/lib/nvidia/xorg"
+    ModulePath "/usr/lib/xorg/modules"
+EndSection
+
+
+
+/etc/lightdm/display_setup.sh
+
+#!/bin/sh
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --output HDMI-0 --primary --mode 2560x1440 --pos 2560x0 --rotate normal --output eDP-1-1 --mode 2560x1440 --pos 0x0 --rotate normal 
+
+
+
+/etc/lightdm/lightdm.conf
+[Seat:*]
+display-setup-script=/etc/lightdm/display_setup.sh
